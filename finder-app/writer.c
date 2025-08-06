@@ -47,6 +47,15 @@ int main(int argc, char *argv[]) {
         return 1;
     }
 
+    // Close the file descriptor
+    nr = close(fd);
+    if (nr == -1) {
+        perror("Error closing file");
+        return 1;
+    }
+
+    // printf("File closed successfully.\n");
+
     closelog();
     return 0;
 }
